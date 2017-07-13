@@ -1,0 +1,15 @@
+source,target,value
+Population at start,Over 45,36700
+Population at start,Under 45,167000
+Over 45,Male,29400
+Over 45,Female,7300
+Male,Filed by Agent,8700
+Male,Filed before Jan15,6100
+Male,Filed during Jan15,12000
+Male,Filed Late,2600
+Under 45,Income < £25000,131000
+Under 45,Income > £25000,36100
+Income < £25000,Very Happy,35600
+Income < £25000,Quite Happy,26100
+Income < £25000,Quite Sad,51400
+Income < £25000,Very Sad,17900
