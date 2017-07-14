@@ -1,4 +1,4 @@
-name,manager,group,business_area,Directorate,grade,location,info
+name,manager,group,business_area,directorate,grade,location,info
 B,B,0,Head Office,,CEO,London,"Cras sed posuere erat, ac."
 B,B,0,Head Office,HO,Director,London,
 C,B,0,Head Office,HO: Finance,AD,London,
