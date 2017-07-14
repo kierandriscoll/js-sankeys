@@ -32,10 +32,8 @@ body { font: 16px Helvetica;}
 <p id="chart">
 
 <script src="https://d3js.org/d3.v3.min.js"></script>
-<?!= include('sankey.js') ?> 
+<script src="sankey.js"></script> 
 <script>
-	
-function loadData(data) {
     
 var units = "Customers";
 
@@ -63,6 +61,9 @@ var sankey = d3.sankey()
 
 var path = sankey.link();
 
+//Load Data function	
+d3.csv("data.csv", function(data) {
+	
   //set up graph in same style as original example but empty
   graph = {"nodes" : [], "links" : []};
 
