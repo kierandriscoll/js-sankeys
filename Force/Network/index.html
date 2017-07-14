@@ -40,7 +40,7 @@
 <div>Network Diagram</div>
 <script>
 
-// get the data
+// Load Data
 d3.csv("network.csv", function(data) {
 
 // Create a list of distinct nodes, and add source/target values to the original data
@@ -125,7 +125,7 @@ function tick() {
 			                 + "Notes : " + d.info;} );
 svg.call(tip);  
 
-} //End of loadData function
+}); //End of loadData function
 </script>
 </body>
 </html>
