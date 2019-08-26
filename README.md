@@ -4,7 +4,7 @@ D3 is a javascript library that makes it easier to create visualisations in a we
 You need to have some understanding of HTML, CSS, and Javascript
 
 # HTML & CSS Recap
-HTML is made up of elements. Elements usually start and end with a tag eg: *<h1>Page One Heading</h1>*. Elements can have attributes. Eg. the element *<style>* can have the attribute *type*. Elements can be nested inside each other, and so can have a parent/child heirarchy.
+HTML is made up of elements. Elements usually start and end with a tag. Elements can have attributes. Eg. the element *<style>* can have the attribute *type*. Elements can be nested inside each other, and so can have a parent/child heirarchy.
   
 <!DOCTYPE html>
   <head>
@@ -18,14 +18,14 @@ HTML is made up of elements. Elements usually start and end with a tag eg: *<h1>
     <p>Paragraph of text.</p>
   </body>
 
-##CSS
+## CSS
 CSS consists of selectors and rules. Selectors are the names of the HTML elements or classes that the styles will apply to; Rules are defined within curly brackets { }  
 
 p { font-family: sans-serif;
     color: lime;
   }
 
-##SVG
+## SVG
 D3 creates visualisations by using the <SVG> element (Scalable Vector Graphics) - this draws shapes (eg. circles, rectangles, lines etc..) based on given parameters. In raw HTML this looks like:
 
 <svg width="100" height="100">
