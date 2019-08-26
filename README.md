@@ -4,7 +4,7 @@ D3 is a javascript library that makes it easier to create visualisations in a we
 You need to have some understanding of HTML, CSS, and Javascript
 
 # HTML & CSS Recap
-HTML is made up of elements. Elements usually start and end with a tag. Elements can have attributes. Eg. the element *<style>* can have the attribute *type*. Elements can be nested inside each other, and so can have a parent/child heirarchy.
+HTML is made up of elements. Elements usually start and end with a tag. Elements can have attributes. Eg. the element **<style>** can have the attribute **type**. Elements can be nested inside each other, and so can have a parent/child heirarchy.
 
 ```  
 <!DOCTYPE html>
@@ -43,13 +43,13 @@ D3 creates visualisations by using the <SVG> element (Scalable Vector Graphics) 
 Variables can be defined and can contain numbers or strings.
   var = 123;
 
-An *array* can be created [ ]. Values can be referenced using the position in the array eg. cars[0] = Saab
+An **array** can be created [ ]. Values can be referenced using the position in the array eg. cars[0] = Saab
   var cars = ["Saab", "Volvo", "BMW"];
 
-*functions* can created using as shown below:
+**functions** can created using as shown below:
   function myFunction() { alert( cars[1] ); }
 
-An *object* can created using { }, and are made of key:value pairs. Values can be numbers, strings, arrays, objects or functions. A value can be referenced using the object and key name separated by a period eg. people.lastName = Doe
+An **object** can created using { }, and are made of key:value pairs. Values can be numbers, strings, arrays, objects or functions. A value can be referenced using the object and key name separated by a period eg. people.lastName = Doe
 var people = {firstName:"John", lastName:"Doe"};     
 
 
@@ -57,7 +57,7 @@ var people = {firstName:"John", lastName:"Doe"};
 The basic D3 code below finds the <body> element and inserts an <svg> element inside it: 
   d3.select("body").append("svg");
 
-The D3 library is an object made up of lots of functions. *select* is a one of these functions (nb. functions that are part of an object are referred to as *methods*). D3 lets you chain its functions/methods using the . eg d3.method1().method2().method3()    
+The D3 library is an object made up of lots of functions. **select** is a one of these functions (nb. functions that are part of an object are referred to as *methods*). D3 lets you chain its functions/methods using the . eg d3.method1().method2().method3()    
 ```
 var svg = d3.select("body")
             .append("svg")
