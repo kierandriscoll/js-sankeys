@@ -44,14 +44,23 @@ Variables can be defined and can contain numbers or strings.
   var = 123;
 
 An **array** can be created [ ]. Values can be referenced using the position in the array eg. cars[0] = Saab
-  var cars = ["Saab", "Volvo", "BMW"];
+```
+var cars = ["Saab", "Volvo", "BMW"];
+```
 
 **functions** can created using as shown below:
-  function myFunction() { alert( cars[1] ); }
+```
+function myFunction() { alert( cars[1] ); }
+```
+Alternatively you may be able to use arrow functions:
+```
+myFunction = () => { alert( cars[1] ); }
+```
 
 An **object** can created using { }, and are made of key:value pairs. Values can be numbers, strings, arrays, objects or functions. A value can be referenced using the object and key name separated by a period eg. people.lastName = Doe
+```
 var people = {firstName:"John", lastName:"Doe"};     
-
+```
 
 # D3 Explained
 The basic D3 code below finds the <body> element and inserts an <svg> element inside it: 
