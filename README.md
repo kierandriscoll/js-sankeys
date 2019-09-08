@@ -27,6 +27,7 @@ p { font-family: sans-serif;
     color: lime;
   }
 ```
+**Bootstrap** is a framework that includes a lot of pre-set CSS classes, and that allows you to easily use a grid system.
 
 ## SVG
 D3 creates visualisations by using the <SVG> element (Scalable Vector Graphics) - this draws shapes (eg. circles, rectangles, lines etc..) based on given parameters. In raw HTML this looks like:   
@@ -84,7 +85,7 @@ svg.append("g")
    .text(“Date”);                    
 ```
 
-# Common D3 methods
+## Common D3 methods
 The function for reading CSV files:  
 ```js
 d3.csv("dataset.csv",
@@ -92,11 +93,63 @@ d3.csv("dataset.csv",
 )
 ```
 
-
+# JQuery
+JQuery is a javascript library that makes it easier to change a HTML document. The main way of selecting a tag/id/class.. with JQuery is to use the **$** function with the relevant CSS selector - for example the code below selects all HTML tags whose id="mapid" :
+```js
+$("#mapid");
+```
+It can also be used to create new tags (which will need to be inserted later).
+```js
+$('<p class="greet">Hello!</p>');
+```
+The **DataTables** library depends on JQuery so that it can be interactive (sortable/searchable/pagination..). 
 
 
 
 # From R to Javascript
+
+## UI & HTML
+A R Shiny dashboard user interface usually contains a header, sidebar and body. A basic body might look like:
+```r
+ui_body <- dashboardBody(
+  
+      fluidRow(
+        box(width = 6,
+            solidHeader = TRUE,
+            status = "primary",
+            title = "Plotly Scatter",
+            
+            plotly::plotlyOutput(outputId = "plotly_line")
+            
+        ),
+        
+        DT::DTOutput(outputId = "data_table")
+      )
+)
+```
+R Shiny is based AdminLTE/Bootstrap, and the R code above generates the following HTML and CSS classes:
+```html
+<div class="content-wrapper">
+  <section class="content">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="box box-solid box-primary">
+          <div class="box-header">
+            <h3 class="box-title">Plotly Scatter</h3>
+          </div>
+          <div class="box-body">
+            <div id="plotly_line" style="width:100%; height:400px; " class="plotly html-widget html-widget-output"></div>
+          </div>
+        </div>
+      </div>
+      <div id="data_table" style="width:100%; height:auto; " class="datatables html-widget html-widget-output"></div>
+    </div>
+  </section>
+</div>
+```
+
+
+
 
 ## A DataTable in R
 ```r
@@ -156,7 +209,6 @@ jsondata <- jsonlite::toJSON(setNames(tabledata,NULL))
 <script>
 var jsondata = `r jsondata`;
 
-$(document).ready(function() {
     $('#table_id').DataTable({
         data: jsondata,
         columns: [ { title: "Category" },
@@ -176,10 +228,15 @@ $(document).ready(function() {
 	dom: 't',
 	lengthMenu: [5, 10, 15]
     });
-});
 </script>
 ```
-
+DataTable relies on JQuery to work, and has some other methods that can update the table when an event occurs. These methods can be chained: 
+```
+$('#table_id').DataTable().clear();  // Removes all data from the table
+$(#table_id).DataTable().rows.add(...);  // Adds multiple rows of data (must be supplied)
+$(#table_id).DataTable().draw();  // Instruction to draw the table
+$(#table_id).DataTable().clear().rows.add(...).draw();  // All methods chained together
+```
 
 ## A Plotly Bar Chart in R
 ```r
