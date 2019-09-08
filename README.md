@@ -122,7 +122,8 @@ DT::datatable(data = tabledata,
               ),
               rownames = FALSE,
               escape = FALSE) %>%
-DT::formatCurrency("Comments", currency = "",
+DT::formatCurrency("Comments",
+                   currency = "",
                    interval = 3,
                    mark = ",",
                    digits = 0) %>%
@@ -146,11 +147,12 @@ jsondata <- jsonlite::toJSON(setNames(tabledata,NULL))
 ```
 
 ## A Datatable in JS
-```js
+```html
 <div id="dt_container">
 <table id="table_id" class="display"></table>
 </div>
-
+```
+```js
 <script>
 var jsondata = `r jsondata`;
 
@@ -165,13 +167,14 @@ $(document).ready(function() {
         ],
         columnDefs: [ { targets: [0], width: "40%"},
                       { targets: [1,2,3,4], width: "15%" },
-				          	  { targets: [2,4], render: function ( data, type, row ) { return data*100 + "%"; } },
-					            { targets: [3], createdCell: function(td, cellData, rowData, row, col){ var color = (cellData > 0) ? 'green' : 'red';
-                                                                                              $(td).css('color', color);
-											                                              												  $(td).css('font-weight', 'bold');	} }
+		      { targets: [2,4], render: function ( data, type, row ) { return data*100 + "%"; } },
+		      { targets: [3], createdCell: function(td, cellData, rowData, row, col) {
+		      					var color = (cellData > 0) ? 'green' : 'red';
+                                                        $(td).css('color', color);
+							$(td).css('font-weight', 'bold');	} }
         ],
-		    dom: 't',
-		    lengthMenu: [5, 10, 15]
+	dom: 't',
+	lengthMenu: [5, 10, 15]
     });
 });
 </script>
@@ -213,7 +216,8 @@ abletodo <- jsonlite::toJSON(tabledata$AbleToDo)
 ## Plotly Bar in JS
 ```html
 <div id="plotly_bar_id" style="width:627px;></div>
-
+```
+```js
 <script>
 var setup = [{ x: `r pct`,
                y: `r category`,
