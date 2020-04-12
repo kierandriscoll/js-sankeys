@@ -27,10 +27,27 @@ A JSON array is an **array of objects** and is used by various visualisation lib
 var json = [{firstName:"John", lastName:"Doe"}, {firstName:"Susan", lastName:"Smith"}, {firstName:"David", lastName:"Jones"}];     
 ```
 
+To filter a JSON array (and return a new one):
+```js
+var filtered = json.filter(function(json){return json.lastName == "Smith"});
+// or using arrow function
+var filtered = json.filter(json => {json.lastName == "Smith"});
+```
+
+To loop through a JSON array and create/edit values:
+```js
+json.forEach(function(i) {return i.fullname = i.firstName + " " + i.lastName});
+// or using arrow function
+json.forEach(i => {i.fullname = i.firstName + " " + i.lastName});
+```
+
 
 
 # JQuery
-JQuery is a javascript library that makes it easier to change a HTML document. The main way of selecting a tag/id/class.. with JQuery is to use the **$** function with the relevant CSS selector - for example the code below selects all HTML tags whose id="mapid" :
+JQuery is a javascript library that makes it easier to change a HTML document. The main way of selecting a tag/id/class.. with JQuery is to use the **$** function with the relevant CSS selector - for example the code below would select all HTML tags whose id="mapid" :
+```html
+<div id="mapid"></div>
+```
 ```js
 $("#mapid");
 ```
@@ -39,6 +56,20 @@ It can also be used to create new tags (which will need to be inserted later).
 $('<p class="greet">Hello!</p>');
 ```
 The **DataTables** library depends on JQuery so that it can be interactive (sortable/searchable/pagination..). 
+
+Insert/append content using JQuery. 
+```js
+$("#mapid").append("Add text");  
+$("#mapid").append("<div><a href="google.com">Add link</a><div>");
+```
+Insert class or style using JQuery. 
+```js
+$("#mapid").addClass("ssss");
+$("#mapid").css("color", "red")
+```
+
+Nb. JQuery is simpler way of selecting elements compared to using raw javascript such as *document.getElementById(id)* 
+
 
 
 
