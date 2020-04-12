@@ -7,19 +7,30 @@ An **array** can be created [ ]. Values can be referenced using the position in 
 var cars = ["Saab", "Volvo", "BMW"];
 ```
 
-**functions** can created using as shown below:
-```js
-function myFunction() { alert( cars[1] ); }
-```
-Alternatively you may be able to use arrow functions:
-```
-myFunction = () => { alert( cars[1] ); }
-```
-
 An **object** can created using { }, and are made of key:value pairs. Values can be numbers, strings, arrays, objects or functions. A value can be referenced using the object and key name separated by a period eg. people.lastName = Doe
 ```js
 var people = {firstName:"John", lastName:"Doe"};     
 ```
+
+# Functions
+Functions are defined as shown below:
+```js
+function myFunction() { alert( cars[1] ); }
+```
+Alternatively you can use arrow functions:
+```js
+myFunction = () => { alert( cars[1] ); }
+```
+
+If you want to link an action (eg clicking a button) to your function:
+```html
+<button onclick="javascript: myfunction()"></button>
+```
+```js
+myFunction = () => { alert( "The button has been clicked." ); }
+```
+
+
 
 # JSON Arrays
 A JSON array is an **array of objects** and is used by various visualisation libraries. If you import tabular data into javascript it will normally need to be in this format:  
