@@ -21,6 +21,14 @@ An **object** can created using { }, and are made of key:value pairs. Values can
 var people = {firstName:"John", lastName:"Doe"};     
 ```
 
+# JSON Arrays
+A JSON array is an **array of objects** and is used by various visualisation libraries. If you import tabular data into javascript it will normally need to be in this format:  
+```js
+var json = [{firstName:"John", lastName:"Doe"}, {firstName:"Susan", lastName:"Smith"}, {firstName:"David", lastName:"Jones"}];     
+```
+
+
+
 # JQuery
 JQuery is a javascript library that makes it easier to change a HTML document. The main way of selecting a tag/id/class.. with JQuery is to use the **$** function with the relevant CSS selector - for example the code below selects all HTML tags whose id="mapid" :
 ```js
