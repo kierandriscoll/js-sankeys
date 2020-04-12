@@ -51,11 +51,6 @@ JQuery is a javascript library that makes it easier to change a HTML document. T
 ```js
 $("#mapid");
 ```
-It can also be used to create new tags (which will need to be inserted later).
-```js
-$('<p class="greet">Hello!</p>');
-```
-The **DataTables** library depends on JQuery so that it can be interactive (sortable/searchable/pagination..). 
 
 Insert/append content using JQuery. 
 ```js
@@ -71,9 +66,9 @@ $("#mapid").css("color", "red")
 Nb. JQuery is simpler way of selecting elements compared to using raw javascript such as *document.getElementById(id)* 
 
 
-
-
 ## A Datatable in JS
+The **DataTables** library depends on JQuery so that it can be interactive (sortable/searchable/pagination..). 
+
 ```html
 <div id="dt_container">
 <table id="table_id" class="display"></table>
